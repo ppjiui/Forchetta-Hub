@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .link-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            animation: slideUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .link-card:nth-child(1) { animation-delay: 0.2s; }
+        .link-card:nth-child(2) { animation-delay: 0.4s; }
+        .link-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        .card-header {
+            height: 120px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .card-desc {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .visit-btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .visit-btn:hover {
+            background: var(--secondary);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Project Hub</h1>
+            <p class="subtitle">Quick access to all my deployed projects in one place</p>
+        </header>
+        
+        <main>
+            <div class="links-grid">
+                <!-- Quotation Website Card -->
+                <div class="link-card">
+                    <div class="card-header">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Quotation Website</h3>
+                        <p class="card-desc">A platform for creating and managing professional quotations for your business needs.</p>
+                        <a href="https://forchetta.vercel.app" target="_blank" class="visit-btn">Visit Website</a>
+                    </div>
+                </div>
+                
+                <!-- Food Tags Card -->
+                <div class="link-card">
+                    <div class="card-header">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Food Tags</h3>
+                        <p class="card-desc">Organize and categorize your food items with customizable tags for better inventory management.</p>
+                        <a href="https://food-tags.vercel.app" target="_blank" class="visit-btn">Visit Website</a>
+                    </div>
+                </div>
+                
+                <!-- Delivery Note Card -->
+                <div class="link-card">
+                    <div class="card-header">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Delivery Note</h3>
+                        <p class="card-desc">Generate and track delivery notes for your shipments with ease and efficiency.</p>
+                        <a href="https://delivery-notes-psi.vercel.app" target="_blank" class="visit-btn">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>More projects coming soon! • Last updated: April 2023</p>
+        </footer>
+    </div>
+</body>
+</html>
